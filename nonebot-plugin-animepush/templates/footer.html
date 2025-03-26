@@ -1,0 +1,83 @@
+<style>
+    .footer {
+        margin-top: auto;
+        padding: 30px;
+        background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.02));
+        border-top: 3px solid rgba(0,0,0,0.05);
+        border-radius: 0 0 20px 20px;
+    }
+
+    .footer-content {
+        text-align: center;
+        color: var(--text-secondary);
+    }
+
+    .footer-info {
+        margin-bottom: 15px;
+        font-size: 1em;
+    }
+
+    .footer-meta {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-bottom: 15px;
+        font-size: 0.9em;
+    }
+
+    .update-time, .version {
+        color: var(--text-secondary);
+        padding: 5px 15px;
+        background: rgba(0,0,0,0.03);
+        border-radius: 20px;
+    }
+
+    .copyright {
+        font-size: 0.85em;
+        color: var(--text-secondary);
+        opacity: 0.8;
+    }
+
+    @media (max-width: 768px) {
+        .footer {
+            padding: 20px;
+        }
+        .footer-meta {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+</style>
+
+<footer class="footer">
+    <div class="footer-content">
+        {% if footer_info %}
+        <div class="footer-info">
+            {{ footer_info }}
+        </div>
+        {% endif %}
+        
+        <div class="footer-meta">
+            {% if update_time %}
+            <span class="update-time">
+                <i class="far fa-clock"></i> {{ update_time }}
+            </span>
+            {% endif %}
+            
+            {% if version %}
+            <span class="version">
+                <i class="fas fa-code-branch"></i> v{{ version }}
+            </span>
+            {% endif %}
+        </div>
+        
+        {% if copyright %}
+        <div class="copyright">
+            {{ copyright }}
+        </div>
+        {% endif %}
+    </div>
+</footer>
+</div>
+</body>
+</html>
