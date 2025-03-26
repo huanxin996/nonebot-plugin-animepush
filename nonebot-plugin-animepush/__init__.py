@@ -1,3 +1,4 @@
+import os
 from nonebot.adapters.onebot.v11 import GroupMessageEvent, PrivateMessageEvent, MessageSegment, Message
 from nonebot.plugin.on import on_command
 from nonebot.params import CommandArg
@@ -9,7 +10,7 @@ from typing import Union
 from .config import Config
 from .utils import update_anime_database,fetch_bangumi_data,get_weekly_schedule,save_daily_dramas,anime_render,get_drama_detail
 scheduler = require("nonebot_plugin_apscheduler").scheduler
-
+TEMPLATES_PATH = os.path.join(os.path.dirname(__file__), 'templates')
 
 __plugin_meta__ = PluginMetadata(
     name="nonebot-plugin-animepush",

@@ -10,6 +10,10 @@
 
 _✨ 实时追踪最新动漫，自动推送更新信息 ✨_
 
+# 示例图片
+
+<img src="https://raw.githubusercontent.com/huanxin996/nonebot-plugin-animepush/main/such.jpg" alt="示例图片">
+
 </div>
 
 ## 📝 插件说明

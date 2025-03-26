@@ -1,7 +1,7 @@
 from tortoise import fields
 from tortoise.models import Model
 from nonebot_plugin_tortoise_orm import add_model
-add_model("qqzone.plugins.fanju.model")
+add_model("nonebot_plugin_animepush.model")
 
 class Todaydrama(Model):
     date = fields.DateField(primary_key=True)   # 日期

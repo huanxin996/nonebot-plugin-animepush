@@ -380,17 +380,16 @@ async def generate_anime_image(
         template_path = current_dir / "templates"
         fonts_path = template_path / "fonts"
         
-        if not fonts_path.exists() or not any(fonts_path.iterdir()):
+        if not fonts_path.exists():
             fonts_path.mkdir(parents=True)
-            template_path.mkdir(parents=True)
-            logger.debug(f"创建字体目录: {fonts_path}, 模板目录: {template_path}")
+            logger.debug(f"创建字体目录: {fonts_path}")
         
         if not template_path.exists():
             logger.error(f"模板文件不存在: {template_path}")
             return None
         font_files = {
-            'medium': f"fonts/{config.fanju_fonts_medium}",
-            'bold': f"fonts/{config.fanju_fonts_bold}"
+            'medium': f"fonts/{config.animepush_fonts_medium}",
+            'bold': f"fonts/{config.animepush_fonts_bold}"
         }
         for font_type, rel_path in font_files.items():
             abs_path = template_path / rel_path
@@ -443,9 +442,9 @@ async def generate_anime_image(
             pages={
                 "viewport": {"width": viewport_width, "height": viewport_height}
             },
-            wait=config.fanju_image_wait,
+            wait=config.animepush_image_wait,
             type="jpeg",
-            quality=config.fanju_image_quality
+            quality=config.animepush_image_quality
         )
         with open(image_path, 'wb') as f:
             f.write(image_bytes)
